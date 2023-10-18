@@ -8,30 +8,30 @@
 </head>
 <body>
     <div class="container"><br>
-        <input type="datetime-local" name="" id="">
-        <h3 id="h3">0</h3><br>
-        <button value="1" class="button">1</button>
-        <button value="2" class="button">2</button>
-        <button value="3" class="button">3</button>
-        <button value="+" class="operator">+</button><br>
-        <button value="4" class="button">4</button>
-        <button value="5" class="button">5</button>
-        <button value="6" class="button">6</button>
-        <button value="-" class="operator">-</button><br>
-        <button value="7" class="button">7</button>
-        <button value="8" class="button">8</button>
-        <button value="9" class="button">9</button>
-        <button value="*" class="operator">X</button><br>
-        <button onclick="cancelIdleCallback('operator')" class="operator">DEL</button>
-        <button value="0" class="button">0</button>
-        <button value="/" style="padding-left: 2em; text-align: center;" class="operator">/</button><br>
-        <button value="=" type="submit" class="submit">=</button>
-        <button value="0" type="reset" id="AC" style="background-color: red; color: white;">AC</button>
-        <button value="%" class="operator">%</button><br><br><br>
-        <div style="background-color: rgb(22, 21, 21)">
-         <marquee behavior="title" direction="right"><h1 style="color: white; font-size: x-large;">Calculator by <span style="color: yellow; font-size: xx-large;">Osom Emmanuel</span></h1></marquee>
-        </div>
+       <br><br><br><br><p style="padding-bottom: 1em;" id="upper-screen">0</p>
+        <p style="padding-top: 1em;" id="lower-screen"></p>
+        <div class="new-div"></div>
+            <button value="1" class="button">1</button>
+            <button value="2" class="button">2</button>
+            <button value="3" class="button">3</button>
+            <button value="+" class="operator">+</button><br>
+            <button value="4" class="button">4</button>
+            <button value="5" class="button">5</button>
+            <button value="6" class="button">6</button>
+            <button value="-" class="operator">-</button><br>
+            <button value="7" class="button">7</button>
+            <button value="8" class="button">8</button>
+            <button value="9" class="button">9</button>
+            <button value="*" class="operator">X</button><br>
+            <button value="" class="DEL">DEL</button>
+            <button value="0" class="button">0</button>
+            <button value="/" class="operator">/</button>
+            <button value="" class="on" type="reset">ON</button><br>
+            <button name="result" value="" class="result">=</button>
+            <button value="" type="reset" id="AC" style="background-color: red; color: white;">AC</button>
+            <button value="%" class="operator">%</button>
+            <button value="" class="off" type="shutdown">OFF</button><br><br><br>
     </div>
-<script src="calculator.js"></script>
+    <script src="calculator.js"></script>
 </body>
 </html>
