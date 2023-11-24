@@ -6,91 +6,139 @@ let startButtons = document.querySelectorAll('.operator');
 let OffButton = document.querySelector('.off');
 let onButton = document.querySelector('.on');
 let Clear = document.getElementById('AC');
-let Del = document.querySelectorAll('.DEL')
+let Del = document.querySelector('.DEL');
 let result = document.querySelector('.result');
 let newScreen = document.querySelector('.new-div');
 let stringNum = '';
+let secondString = '';
+let display = "";
+let check = false;
 let funcNum = '';
-let delNum = stringNum.slice(1);
-let resultNum = '';
-let clearNum = '';
-let off = '';
+let thirdString = '';
+let otherString = '';
+let answerPicked = '';
+let resultNum = 0;
+let clearNum = "";
+let On = "";
+
 
 numbers.forEach(button => {
     button.addEventListener('click', (e) => {
-        stringNum += button.value;
-        screen.innerHTML = stringNum;
-        if (stringNum.length>10) {
-            screen.innerHTML = 'Dear user, you have been limited from adding other numbers'
+        if(!check){
+            console.log(check)
+            stringNum += button.value;
+            screen2.innerHTML = stringNum;
+            if (stringNum.length>10) {
+                screen2.innerHTML = 'Dear user, you have been limited from adding other numbers'
+            }
+        } else {
+            console.log(check)
+            secondString += button.value;
+            screen2.innerHTML = secondString;
+            display += button.value
+            screen.innerHTML = display
+            if (secondString.length>10) {
+                screen.innerHTML = 'Dear user, you have been limited from adding other numbers'
+                secondString++
+            } 
         }
-        console.log(stringNum)
-        
+        e.preventDefault();
     })
-
-});
+})
 
 Operators.forEach(operator => {
     operator.addEventListener('click', (e) => {
-        funcNum += operator.value;
-
-        screen.innerHTML = stringNum += funcNum; 
-    
-        console.log(funcNum)
-
-        event.preventDefault();
+            funcNum = operator.value;
+            check = true; 
+            display = stringNum
+            display += funcNum
+            screen.innerHTML = display
+            screen2.innerText = ''
+        e.preventDefault();
        
+           
     })
 })
 
 result.addEventListener('click', (e) => {
-    let resultNum = sum(...stringNum)
-    screen2.innerHTML = resultNum;
-
-    event.preventDefault();
-})
-let sum = (...args) => {
-        let resultNum = eval(stringNum);
-        for (let arg of args) 
-    return resultNum;
-        }
-
-        
-Clear.addEventListener('click', (e) => {
-    if (screen.innerHTML = stringNum) {
-        clearNum = stringNum.slice(1);
-        clearNum ++;
-        screen.innerHTML = 0;
-        screen2.innerHTML = clearNum
-        event.preventDefault();
-    }   
-    })
-
-Del.forEach(DEL => {
-    DEL.addEventListener('click', (e) => {
-    if (screen.innerHTML = stringNum) {
-        delNum = stringNum.slice(1);    
-        screen.innerHTML = delNum ;
-    } else {  
-        return  screen.innerHTML = delNum.slice(1);
+    if(funcNum === '+'){
+        resultNum = Number(stringNum) + Number(secondString);
+        check = false;
+        display = '';
+        screen2.innerHTML = resultNum;
+        return
+    }else if(funcNum === '-'){
+        resultNum = Number(stringNum) - Number(secondString) ;
+        check = false;
+        screen2.innerHTML = resultNum;
+    }else if(funcNum === '*'){
+        resultNum = Number(stringNum) * Number(secondString) ;
+        check = false;
+        screen2.innerHTML = resultNum;
+    }else if(funcNum === '/'){
+        resultNum = Number(stringNum) / Number(secondString) ;
+        check = false;
+        screen2.innerHTML = resultNum;
+    }else if(funcNum === '%'){
+        resultNum = Number(stringNum) % Number(secondString) ;
+        check = false;
+        screen2.innerHTML = resultNum;
     }
-        // console.log()
-        event.preventDefault();
-    })
+    
+         
+        e.preventDefault();
+            
 })
+        
+      
+       
+    Clear.addEventListener('click', (e) => {
+            stringNum = "";
+            funcNum = "";
+            screen.innerHTML = "";
+            screen2.innerHTML = "";
+            display = "";
+            secondString = "";
+            
+            e.preventDefault();
+            return screen2.innerHTML = 0;
+            
+        })
+
+
+Del.addEventListener('click', (e) => {
+    if (!check) {
+      stringNum = stringNum.slice(0, -1);
+    } else {
+        secondString = secondString.slice(0, -1);
+        display = display.slice(0, -1);
+    }
+    screen2.innerHTML = screen2.innerHTML.slice(0, -1)
+    screen.innerHTML = screen.innerHTML.slice(0, -1)
+    
+    console.log(Del)
+})
+
 
 newScreen.style.visibility = 'visible'
 
 OffButton.addEventListener('click', (e) => {
-    newScreen.style.visibility = 'visible'
-    console.log(newScreen)
-   if (newScreen.style.visibility = 'visible') {
-        
-   }
-
-  
+    newScreen.style.visibility = 'visible'  
+    newScreen.innerHTML,screen.innerHTML = "";
+    console.log(OffButton)
+    e.preventDefault();
 })
 
 onButton.addEventListener('click', (e) => {
-    newScreen.style.visibility = 'hidden'
-    console.log(newScreen)
+   if( newScreen.style.visibility = 'hidden') {
+       stringNum = "";
+       funcNum = "";
+       screen.innerHTML = "";
+       screen2.innerHTML = "";
+       display = "";
+       secondString = "";
+       return screen2.innerHTML = 0;
+    }
+    console.log(onButton)
+    e.preventDefault()
 })

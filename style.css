@@ -89,48 +89,54 @@ body{
 button:hover{
     background-color: rosybrown;
 }
-
-/* @media screen and (min-width: 1024) { 
-    
-body{
-    width: 1024%;
-    max-width: 1024;
-    background-color: rgb(231, 15, 15);
-    text-align: center;
-    padding-left: 5em;
-}
-.container{
-    border: 2px solid cadetblue;
-    height: 0%;
-    width: 90%;
-    background-color: rgb(27, 143, 23);
-    text-align: center;
-    margin: 4em 0em 0 0.9em;
-    padding: 5em 0.8em 2em 0;
-}
-#upper-screen, #lower-screen{
-    background-color: rgb(206, 204, 204);
-    margin: -3.5em 0 1em 20px;
-    height: 2em;
-    width: 90%;
-    text-align: right;
-    font-size: xx-large;
-}
-.button, .operator, .result, #AC, .DEL{
-    padding: 1em 1em 1em 1em;
-    font-size: larger;
-    font-style: oblique;
-    font: bolder;
-    margin: 1.5em 0em 0 1em;
-    background-color: blanchedalmond;
-    height: 2em;
-    width: 3.5em;
-    line-height: 2em;
-}
-
-button:hover{
+.DEL:hover{
     background-color: rosybrown;
 }
-}
 
-    */
+@media screen and (min-width: 768px){ 
+    body{
+       width: 100%;
+    }
+    .container{
+       width: 50%;
+       margin: 9em 0 1em 25%;
+    }
+    
+    .new-div{
+        height: 0.4em;
+        margin-top: -149px;
+        
+    }
+    .button, .operator, .result, #AC, .DEL, .off, .on{
+        margin: 1.5em 0em 0 1em;
+        height: 4em;
+        width: 3.5em;
+        padding: 1em 1em 0 1em;
+    }
+    
+}
+@media screen and (min-width: 1246px) {
+    .body{
+        margin-top: 0;
+        width: 100%;
+    }
+    .container{
+       width: 30em;
+       height: 30em;
+       margin: 2em 0 0 30%;
+       padding: 4em 0 4em 1em;
+     }
+     
+     .button, .operator, .result, #AC, .DEL, .off, .on{
+        height: 2em;
+        width: 4em;
+        margin: 0.8em 0 0 1em;
+        padding-bottom: 2em;
+     }
+     .button-div{
+        text-align: center;
+        position: absolute;
+        left: 26em;
+     }
+     
+}

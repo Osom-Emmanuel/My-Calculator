@@ -5,12 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Osom_Calculator</title>
     <link rel="stylesheet" href="style.css">
-</head>
+</head> 
+<!-- <style>
+    .header{
+
+    }
+</style> -->
 <body>
+    <!-- <header class="header"></header> -->
     <div class="container"><br>
-       <br><br><br><br><p style="padding-bottom: 1em;" id="upper-screen">0</p>
+       <br><br><br><br><p style="padding-bottom: 1em;" id="upper-screen"></p>
         <p style="padding-top: 1em;" id="lower-screen"></p>
         <div class="new-div"></div>
+        <div class="button-div">
             <button value="1" class="button">1</button>
             <button value="2" class="button">2</button>
             <button value="3" class="button">3</button>
@@ -23,7 +30,7 @@
             <button value="8" class="button">8</button>
             <button value="9" class="button">9</button>
             <button value="*" class="operator">X</button><br>
-            <button value="" class="DEL">DEL</button>
+           <input type="button" class="DEL" value="DEL">
             <button value="0" class="button">0</button>
             <button value="/" class="operator">/</button>
             <button value="" class="on" type="reset">ON</button><br>
@@ -31,7 +38,8 @@
             <button value="" type="reset" id="AC" style="background-color: red; color: white;">AC</button>
             <button value="%" class="operator">%</button>
             <button value="" class="off" type="shutdown">OFF</button><br><br><br>
-    </div>
+        </div>
+</div>
     <script src="calculator.js"></script>
 </body>
 </html>
